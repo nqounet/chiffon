@@ -7,6 +7,7 @@ use Proclet::Declare;
 
 env(
   MOJO_MODE => 'development',
+#  MOJO_MODE => 'production',
 );
 
 service('navigator', 'ruby -Ichiffon-navigator/sinatra chiffon-navigator/sinatra/app.rb');# 4567
