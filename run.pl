@@ -10,8 +10,8 @@ env(
 #  MOJO_MODE => 'production',
 );
 
-service('navigator', 'ruby -Ichiffon-navigator/sinatra chiffon-navigator/sinatra/app.rb');# 4567
-service('viewer',    'morbo chiffon-viewer/script/chiffon_web --listen http://*:4568');
+service('navigator', 'ruby -Idata/chiffon-navigator/sinatra data/chiffon-navigator/sinatra/app.rb');# 4567
+service('viewer',    'morbo data/chiffon-viewer/script/chiffon_web --listen http://*:4568');
 
 worker(
   navigator => 1,
