@@ -11,7 +11,7 @@ env(
 );
 
 service('navigator', 'ruby -Idata/chiffon-navigator/sinatra data/chiffon-navigator/sinatra/app.rb');# 4567
-service('viewer',    'morbo data/chiffon-viewer/script/chiffon_web --listen http://*:4568');
+service('viewer',    'morbo data/chiffon-viewer/script/chiffon_web --listen http://*:4568 --watch data/chiffon-viewer/lib --watch data/chiffon-viewer/templates');
 
 worker(
   navigator => 1,
