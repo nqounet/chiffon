@@ -10,7 +10,11 @@ Chiffonの開発用ヘルパースクリプトです。
 
 # sctipts
 ## run.pl
-navigatorとviewerを同時に起動するスクリプトです。
+NavigatorとViewerとReceiverを同時に起動するスクリプトです。
+
+Navigator : http://localhost:4567
+Viewer    : http://localhost:4568
+Receiver  : http://localhost:4569
 
 # licence
 Perl
