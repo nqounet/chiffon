@@ -13,19 +13,16 @@ env(
   CHIFFON_WEB_NAVIGATOR_DEBUG => 0,
   CHIFFON_WEB_RECIPE_DEBUG => 0,
   CHIFFON_WEB_SYSTEM_DEBUG => 0,
-  CHIFFON_RECEIVER_DEBUG => 0,
-  CHIFFON_RECEIVER_INDEX_DEBUG => 0,
-  CHIFFON_RECEIVER_EXTERNAL_DEBUG => 0,
+  CHIFFON_WEB_RECEIVER_DEBUG => 0,
+  CHIFFON_WEB_EXTERNAL_DEBUG => 0,
 );
 
 service('navigator', 'ruby -Idata/chiffon-navigator/sinatra data/chiffon-navigator/sinatra/app.rb');# 4567
 service('viewer',    'morbo data/chiffon-viewer/script/chiffon_web --listen http://*:4568 --watch data/chiffon-viewer/lib --watch data/chiffon-viewer/templates');
-service('receiver',  'morbo data/chiffon-receiver/script/chiffon_receiver --listen http://*:4569 --watch data/chiffon-receiver/lib');
 
 worker(
   navigator => 1,
   viewer    => 1,
-  receiver  => 1,
 );
 
 color;
