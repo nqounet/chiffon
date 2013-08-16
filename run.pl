@@ -10,6 +10,7 @@ env(
   CHIFFON_WEB_DEBUG => 0,
   MOJO_I18N_DEBUG => 0,
   CHIFFON_WEB_INDEX_DEBUG => 0,
+  CHIFFON_WEB_LOGGER_DEBUG => 1,
   CHIFFON_WEB_NAVIGATOR_DEBUG => 0,
   CHIFFON_WEB_RECIPE_DEBUG => 0,
   CHIFFON_WEB_SYSTEM_DEBUG => 0,
@@ -18,7 +19,7 @@ env(
 );
 
 service('navigator', 'ruby -Idata/chiffon-navigator/sinatra data/chiffon-navigator/sinatra/app.rb');# 4567
-service('viewer',    'morbo data/chiffon-viewer/script/chiffon_web --listen http://*:4568 --watch data/chiffon-viewer/lib --watch data/chiffon-viewer/templates');
+service('viewer',    'morbo --listen http://*:4568 --watch data/chiffon-viewer/lib --watch data/chiffon-viewer/templates --watch data/chiffon-viewer/chiffon-web.conf data/chiffon-viewer/script/chiffon_web');
 
 worker(
   navigator => 1,
