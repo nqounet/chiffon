@@ -13,7 +13,6 @@ bin/*
 .bundle/*
 /data/*
 /records/*
-!.gitkeep
 /cookbooks/
 
-chiffon
+!.gitkeep
