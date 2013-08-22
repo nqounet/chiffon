@@ -8,8 +8,12 @@ Vagrant.configure("2") do |config|
   config.vm.provision :chef_solo do |chef|
     chef.json = {
       :tz => "Asia/Tokyo",
+      :ntp => {
+        :servers => ["ntp.nict.jp", "ntp.jst.mfeed.ad.jp"]
+      }
     }
     chef.add_recipe "timezone-ii"
+    chef.add_recipe "ntp"
   end
   config.berkshelf.enabled = true
 end
